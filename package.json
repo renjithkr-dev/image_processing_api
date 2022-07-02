@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/**/*.ts --fix --fix-type layout",
-    "prettier": "prettier src/**/*.ts",
-    "test": "npm run build && npx jasmine",
+    "prettier": "prettier src/* -c" ,
+    "test": "npm run build && jasmine",
     "build": "tsc"
   },
   "repository": {
