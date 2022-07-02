@@ -1,0 +1,37 @@
+{
+  "name": "image_processing_api",
+  "version": "1.0.0",
+  "description": "Udacity Shell SW Engineer ND Project1",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/**/*",
+    "prettier": "prettier src/**/*",
+    "test":"jasmine",
+    "build":"tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renjithkr-dev/image_processing_api.git"
+  },
+  "author": "Renjith Raveendran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renjithkr-dev/image_processing_api/issues"
+  },
+  "homepage": "https://github.com/renjithkr-dev/image_processing_api#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/typescript": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/parser": "^5.30.3",
+    "eslint": "^8.19.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jasmine": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
