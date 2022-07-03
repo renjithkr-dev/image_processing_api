@@ -20,6 +20,8 @@
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
         "comma-spacing":["warn",{"before":false,"after":true}],
-        "arrow-spacing":"off"
+        "arrow-spacing":"off",
+        "import/no-unresolved":"off",
+        "import/extensions":"off"
     }
 }

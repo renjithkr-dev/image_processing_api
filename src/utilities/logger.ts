@@ -5,14 +5,12 @@ import {
 const logger = createLogger({
   level: "http",
   format: format.json(),
-  transports: [
-    new transports.Console(),
-  ],
+  transports: [new transports.Console()],
 });
 
 const debugConsole = new transports.Console({ level: "debug" });
 
-const enableDebug = (l:Logger):void=>{
+const enableDebug = (l: Logger): void => {
   l.clear().add(debugConsole);
 };
 export { logger, enableDebug };
