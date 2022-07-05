@@ -1,5 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import express from "express";
 import { logger, enableDebug } from "./utilities/logger";
 import morgan from "./utilities/morganMiddleware";
@@ -13,6 +11,7 @@ const DEBUG = process.env.NODE_ENV === "development";
 if (DEBUG) enableDebug(logger);
 
 app.use(morgan);
+app.use("/images", express.static("assets"));
 
 app.use("/api", APIRouter);
 
