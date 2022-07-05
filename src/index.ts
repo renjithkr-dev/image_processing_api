@@ -1,7 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 import express from "express";
-import path from "path";
 import { logger, enableDebug } from "./utilities/logger";
 import morgan from "./utilities/morganMiddleware";
 
