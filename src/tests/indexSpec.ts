@@ -1,5 +1,5 @@
-describe("Test Image Processing API",()=>{
-	it("First test",()=>{
-		expect(true).toBeTruthy();
-	});
+describe("Test Image Processing API", () => {
+  it("First test ne", () => {
+    expect(true).toBeTruthy();
+  });
 });

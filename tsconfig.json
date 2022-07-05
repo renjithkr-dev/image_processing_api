@@ -5,7 +5,8 @@
     "lib": ["ES2018", "DOM"], 
     "outDir": "./dist",                        
     "strict": true,                           
-    "noImplicitAny": true,                 
+    "noImplicitAny": true,    
+    "esModuleInterop":true             
   },
   "exclude": ["node_modules", "src/tests",".git"]
 }
