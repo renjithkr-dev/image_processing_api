@@ -15,7 +15,7 @@
     "plugins": [
         "@typescript-eslint","jasmine"
     ],
-    "ignorePatterns": ["dist/**/*.*"],
+    "ignorePatterns": ["dist/**/*.*","src/tests/**/*"],
     "rules": {
         "semi": ["error", "always"],
         "quotes": ["error", "double"],
