@@ -11,14 +11,15 @@ API will return a web page with a single IMG tag and the source will be set to t
 
 ### Endpoints :
 **/api/v1/image**
+
     Mandatory parameters
-        - ==filename== _provide valid values which are filenames available in the /assets/full folder_
-        - ==width==
-        - ==height==
+        - filename _provide valid values which are filenames available in the /assets/full folder_
+        - width
+        - height
     Optional parameters
-        - ==fit==  _accepts the following values_ => _cover, contain, fill, inside , outside_ . Default is cover. See [sharp documentation for details](https://sharp.pixelplumbing.com/api-resize)
-        - ==format==  **accepts only jpg for now which is the default value**
-        - ==quality== **values 1 - 100**
+        - fit  _accepts the following values_ => _cover, contain, fill, inside , outside_ . Default is cover. See [sharp documentation for details](https://sharp.pixelplumbing.com/api-resize)
+        - format  **accepts only jpg for now which is the default value**
+        - quality **values 1 - 100**
 		
 Sample url
 	
