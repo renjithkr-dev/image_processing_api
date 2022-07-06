@@ -23,6 +23,17 @@ app.get("*", (req: express.Request, res: express.Response) => {
   res.status(404).send("Not found");
 });
 
+const errorHandler = (
+  err: Error,
+  req: express.Request,
+  res: express.Response,
+  next: express.NextFunction
+) => {
+  res.status(500).send(err.message);
+};
+
+app.use(errorHandler);
+
 app.listen(PORT, () => {
   logger.info(`Server started on localhost:${PORT}`);
 });

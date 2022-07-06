@@ -42,8 +42,9 @@ describe("Test Image Processing API", () => {
         .expect(200)
         .then((response) => {
           assert(
-            response,
-            `<img src="/images/thumbs/encenadaport-800-600.jp"/>`
+            response.text ===
+              `<img src="/images/thumbs/encenadaport-800-600.jpg"/>`,
+            "Expected thumbnail not created"
           );
         });
     });
@@ -55,11 +56,13 @@ describe("Test Image Processing API", () => {
             ["filename=non-existent.jpg", "height=600", "width=800"].join("&")
         )
         .expect(400)
-        .then(res=>{
-          assert(res,"Error: file non-existent.jpg doesn't exist")
+        .then((res) => {
+          assert(
+            res.text === "Error: file non-existent.jpg doesn't exist",
+            "Response not as expected"
+          );
         })
-        .catch(err =>{})
-       ;
+        .catch((err) => {});
     });
   });
 });
