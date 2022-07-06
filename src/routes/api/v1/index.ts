@@ -84,11 +84,7 @@ router.get(
       try {
         await access(`assets/thumbs/${outFile}`, constants.F_OK);
         logger.debug("Thumbnail  available");
-        res
-          .status(200)
-          .send(
-            `<img src="/images/thumbs/${outFile}"/> <!--  width=${width} height=${height} -->`
-          );
+        res.status(200).send(`<img src="/images/thumbs/${outFile}"/>`);
       } catch (thumbError) {
         logger.debug("Thumbnail not available");
 
