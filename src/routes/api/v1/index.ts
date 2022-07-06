@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express, { NextFunction, Router } from "express";
 import { constants } from "fs";
 import { access } from "fs/promises";
 import { logger } from "../../../utilities/logger";
@@ -33,7 +33,8 @@ const verifyImageQueryParams = (
 const errorHandler = (
   err: Error,
   req: express.Request,
-  res: express.Response
+  res: express.Response,
+  next: NextFunction
 ) => {
   res.status(400).send(err.message);
 };
@@ -60,6 +61,12 @@ router.get(
     try {
       logger.debug(`Checking access to assets/full/${req.query.filename}`);
       await access(`assets/full/${req.query.filename}`, constants.F_OK);
+    } catch (err) {
+      next(err);
+      return;
+    }
+    try {
+      // await access(`assets/full/${req.query.filename}`, constants.F_OK);
 
       logger.info("file exists");
 
