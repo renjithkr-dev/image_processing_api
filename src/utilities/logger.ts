@@ -1,7 +1,7 @@
 import { createLogger, format, Logger, transports } from "winston";
 
 const logger = createLogger({
-  level: "http",
+  level: "error",
   format: format.json(),
   transports: [new transports.Console()],
 });

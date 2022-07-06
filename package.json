@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint \"src/**/*.ts\" --fix --fix-type layout",
-    "prettier": "prettier src/* -w",
+    "prettier": "prettier src/* -w ",
     "test": "npm run build && jasmine",
-    "build": "npm run prettier && npm run lint && tsc",
+    "build": "tsc",
     "build-dev": "tsc -w",
     "start": "node dist/.",
     "start-dev": "nodemon --ignore dist/test/ dist/. "
@@ -27,6 +27,7 @@
     "@types/jasmine": "^4.0.3",
     "@types/morgan": "^1.9.3",
     "@types/sharp": "^0.30.4",
+    "@types/supertest": "^2.0.12",
     "@types/typescript": "^2.0.0",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^5.30.3",
@@ -42,6 +43,7 @@
     "jasmine-spec-reporter": "^7.0.0",
     "nodemon": "^2.0.18",
     "prettier": "^2.7.1",
+    "supertest": "^6.2.4",
     "typescript": "^4.7.4"
   },
   "dependencies": {

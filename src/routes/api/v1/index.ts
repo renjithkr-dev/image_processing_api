@@ -35,7 +35,7 @@ const errorHandler = (
   req: express.Request,
   res: express.Response
 ) => {
-  res.status(500).send(err.message);
+  res.status(400).send(err.message);
 };
 
 router.get("/", (req: express.Request, res: express.Response): void => {
@@ -84,11 +84,7 @@ router.get(
       try {
         await access(`assets/thumbs/${outFile}`, constants.F_OK);
         logger.debug("Thumbnail  available");
-        res
-          .status(200)
-          .send(
-            `<img src="/images/thumbs/${outFile}"/> <!--  width=${width} height=${height} -->`
-          );
+        res.status(200).send(`<img src="/images/thumbs/${outFile}"/>`);
       } catch (thumbError) {
         logger.debug("Thumbnail not available");
 
@@ -106,15 +102,18 @@ router.get(
             );
             width = info.width.toString();
             height = info.height.toString();
+
+            res
+              .status(200)
+              .send(
+                `<img src="/images/thumbs/${outFile}"/> <!--  width=${width} height=${height} -->`
+              );
           })
           .catch((err) => {
             logger.error(err.message);
+            Error.stackTraceLimit = 0;
+            next(new Error("Error during file conversion"));
           });
-        res
-          .status(200)
-          .send(
-            `<img src="/images/thumbs/${outFile}"/> <!--  width=${width} height=${height} -->`
-          );
       }
     } catch (err) {
       logger.error(err);
