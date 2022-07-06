@@ -26,3 +26,5 @@ app.get("*", (req: express.Request, res: express.Response) => {
 app.listen(PORT, () => {
   logger.info(`Server started on localhost:${PORT}`);
 });
+
+export default app;
