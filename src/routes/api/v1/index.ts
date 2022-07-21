@@ -18,17 +18,10 @@ const verifyImageQueryParams = (
   if (!params.filename || !params.height || !params.width) {
     info.success = false;
     info.message = "Missing mandatory parameter(s)";
-  } else if (
-    parseInt(params.height) === undefined ||
-    isNaN(params.height)
-  ) {
+  } else if (parseInt(params.height) === undefined || isNaN(params.height)) {
     info.success = false;
     info.message = "Invalid value for the parameter 'height'";
-  }
-  else if (
-    parseInt(params.width) === undefined ||
-    isNaN(params.width)
-  ) {
+  } else if (parseInt(params.width) === undefined || isNaN(params.width)) {
     info.success = false;
     info.message = "Invalid value for the parameter 'width'";
   }
